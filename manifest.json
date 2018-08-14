@@ -1,0 +1,24 @@
+{
+    "name": "Gothan-word",
+    "version": "0.1",
+    "description": "（×）砍外婆，（√）石欠姥姥",
+    "manifest_version": 2,
+    "browser_action" :{
+        "default_title": "Gothan-word"
+    },
+	"content_security_policy": "script-src 'self' 'sha256-I1lXnxYqIS5LEiArp78l/UWgRmqTMLClwb+ZGx3hjgA=' 'sha256-Agiru0SB0GSDhshcs9yivw0HIvrVVNLQCNVXn1uLdsI=' 'sha256-fwXUz6RGSV67rY9x7sP5XrJBfXJCU17E/DCAEVOf48s='; object-src 'self'",
+    "permissions": [
+        "*://bbs.sgamer.com/*"
+    ],
+	"background": {
+    "scripts": ["js/jt.js","js/ft.js","js/chai.js","js/background.js","js/copyTo.js"]
+	},
+	"content_scripts": [
+    {
+        "matches": ["*://bbs.sgamer.com/thread-*"],
+        "js": ["js/jt.js","js/ft.js","js/copyTo.js","js/page.js"],
+        "css": [],
+        "run_at": "document_end"
+    }
+	]
+}
